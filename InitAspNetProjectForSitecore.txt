@@ -24,4 +24,5 @@ Next:
 * by default Sitecore displays content from Web database. To change it edit Sitecore.config file and for node: <site name="website" ... change database attribute from "web" to "master"
 
 Shortcut:
-Get solution that is already set (remember to include 2 Sitecore dlls mentioned before) 
+Get solution that is already set (remember to include 2 Sitecore dlls mentioned before into bin folder) 
+https://github.com/lukaszsadlocha/blog-EmptySitecoreProject
