@@ -1,2 +1,27 @@
-0. Visual Studio 2017
-1. 
+Prerequisites:
+Visual Studio 2017 (.NET Framework 4.7.1) [Run as Admin]
+Sitecore Version 9
+Local Sitecore url: http://sc901.local/
+Local Sitecore location: C:\inetpub\wwwroot\sc901\Website
+Setup connection between Visual Studio and Sitecore (via Sitecore Rocks)
+
+1. Create new project in VS: ASP.NET Web Application (.NET Framework)
+2. Select [Empty] Web Application
+3. Remove web.config from main folder (this web.config will override default Sitecore's)
+4. To folder bin (it is not included into solution) add Sitecore.Kernerl.dll and Sitecore.Mvc.dll (from your wwwroot)
+5. Add project reference to those 2 dlls
+5. Add folder 'Views'
+6. Inside 'Views' folder add simple cshtml file (in my case: MyMvcLayout.cshtml)
+6. Build project
+7. Add publish profile (Folder -> deployed to IIS site that your sitecore is running on)
+8. publish project and check if page works and has sample cshtml file inside Views folder in wwwroot
+
+Next:
+9. In Sitecore create new MVC layout under: /sitecore/layout/Layouts and point path to sample cshtml created previously
+10. In any item under sitecore/content remove all rendering and change default layout to layout created in previous step
+11. Open page in the browser (publish layout and item if needed)
+
+* by default Sitecore displays content from Web database. To change it edit Sitecore.config file and for node: <site name="website" ... change database attribute from "web" to "master"
+
+Shortcut:
+Get solution that is already set (remember to include 2 Sitecore dlls mentioned before) 
